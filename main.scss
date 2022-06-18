@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
+a {
+  text-decoration: none;
+}
+
+#container {
+  width: 1200px;
+  margin: auto;
+
+  header {
+    display: flex;
+    position: relative;
+    height: 100px;
+    background-color:#07c;
+
+    #logo {
+      height: 100px;
+      width: 250px;
+      a {
+        font-family: 'Merienda', cursive;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+        font-size: 40px;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+
+    nav {
+      #topMenu {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 130px;
+        > li {
+          padding: 22px 60px;
+          a {
+            color: #fff;
+            font-weight: 600;
+            text-shadow:0 1px #07c;
+          }
+          span {
+            font-size: .6em;
+          }
+          &:hover {
+            a {
+              color:#000; 
+            }
+            .downMenuOne, .downMenuTwo{
+              display: block;
+              z-index: 1;
+              a {
+                font-size: 14px;
+                font-weight: 100;
+                text-shadow: none;
+              }
+            }
+            .downMenuOne li:hover, .downMenuTwo li:hover {
+              a {
+                color: red;
+              }
+            }
+          }
+          .downMenuOne {
+            position: absolute;
+            display: none;
+            bottom: -73px;
+            right: 580px;
+            > li {
+              padding: 10px 0;
+              background:rgba(255,255,255,0.6);
+              width: 160px;
+              text-align: center;
+            }
+
+          }
+          .downMenuTwo {
+            position: absolute;
+            bottom: -109px;
+            right: 375px;
+            display: none;
+            > li {
+              padding: 10px 0;
+              background:rgba(255,255,255,0.6);
+              width: 160px;
+              text-align: center;
+            }
+          }
+        }
+        
+      }
+    }
+  }
+
+  #slideShow {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    #slides {
+      position: absolute;
+    }
+    button {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      border: none;
+      padding: 20px;
+      background-color: transparent;
+      color: #000;
+      font-weight: 800;
+      font-size: 24px;
+      opacity: 0.5;
+    }
+    #prev {
+      left: 0;
+    }
+    #next {
+      right: 0;
+    }
+    button:hover {
+      background-color: #222;
+      color: #fff;
+      opacity: .6;
+      cursor: pointer;
+    }
+  }
+
+  #contents {
+    padding-top: 30px;
+    display: flex;
+    height: 300px;
+    
+    #tabMenu {
+      width: 600px;
+      input {
+        display: none;
+      }
+      label {
+        display: inline-block;
+        font-weight: 600;
+        padding: 15px 25px;
+        text-align: center;
+        color: #aaa;
+      }
+      label:hover {
+        color: #222;
+        cursor: pointer;
+      }
+      input:checked + label {
+        color: #b00;
+        border: 1px solid #ddd;
+        background-color: #eee;
+      }
+      .tabContent {
+        display: none;
+        border-top: 1px solid #ddd;
+        padding-top: 20px 0 0;
+        h2 {
+          display: none;
+        }
+      }
+      #notice {
+        > ul {
+          list-style-type: disc;
+          margin-left: 30px;
+          > li {
+            font-size: 16px;
+            line-height: 2.5;
+          }
+        }
+      }
+      #gallery {
+        > ul {
+          > li {
+            display: inline;
+          }
+        }
+      }
+      #tab1:checked ~ #notice,
+      #tab2:checked ~ #gallery {
+        display: block;
+      }
+    }
+
+    #links {
+      width: 600px;
+      ul {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 10px;
+        li {
+          text-align: center;
+          > div {
+            padding-bottom: 15px;
+          }
+          img {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    padding-top: 20px;
+    border-top: 3px solid #999;
+    #bottomMenu {
+      > ul {
+        display: flex;
+        
+        > li {
+          position: relative;
+          padding: 10px 0;
+          a {
+            padding: 0 20px;
+            color: #777;
+          }
+        }
+        li::before {
+          content: "";
+          width: 1px;
+          height: 20px;
+          background-color: #999;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+        li:first-child::before {
+          display: none;
+        }
+      }
+      p {
+        font-size: 16px;
+        padding: 20px 20px;
+        color: #999;
+      }
+    }
+  }
+}
